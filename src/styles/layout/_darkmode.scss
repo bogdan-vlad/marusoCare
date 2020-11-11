@@ -1,0 +1,170 @@
+// Color variables
+// These can be used by adding a class to a
+// selector, for example 'error' it will
+// automatically add the base color
+
+$error: (
+    "base":      #fc0606,
+    "lighten-2": #E57373,
+    "lighten-1": #EF5350,
+    "darken-1":  #d0181e,
+    "darken-2":  #b9151b,
+);
+$warning: (
+    "base":      #dcc300e3,
+    "lighten-2": #fff176,
+    "lighten-1": #ffee58,
+    "darken-1":  #fdd835,
+    "darken-2":  #fbc02d,
+);
+$success: (
+    "base":      #2c9409,
+    "lighten-2": #81C784,
+    "lighten-1": #66BB6A,
+    "darken-1":  #43A047,
+    "darken-2":  #388E3C,
+);
+
+$darkmode: (
+    "base":      #000000,
+    "white":     #ffffff,
+);
+
+$whitemode: (
+    "base":      #ffffff,
+    "black":     #000000,
+);
+
+$colors: (
+    "error": $error,
+    "warning": $warning,
+    "success": $success,
+    "darkmode": $darkmode,
+    "whitemode": $whitemode,
+);
+
+.switch {
+    display: flex;
+    align-items: center;
+  }
+  
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display: none;
+  }
+  
+  .toggle {
+    background-color: #000024;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .8s;
+  }
+  
+  .toggle::before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .toggle {
+    background-color: #e2d95f;
+  }
+  
+  input:checked + .toggle:before {
+    transform: translateX(26px);
+  }
+  
+  .toggle.round {
+    border-radius: 34px;
+  }
+  .toggle.toggle::before {
+    border-radius: 50%;
+  }
+
+  @function color-change($color, $color_type) {
+    @if map-has-key($color, $color_type) {
+        @return map-get($color, $color_type);
+    }
+    @warn "Some of your secondary colors are not correct.";
+    @return null;
+}
+
+  :root {
+    --font-color: #424242;
+    --bg-color: #fff;
+    --nav: #fff;
+    --heading-color: #292922;
+    --image: url('/assets/images/tuware_white.svg');
+    @each $c_name, $color in $colors {
+        .#{$c_name} {
+            color: color-change($color, 'base');
+        }
+    }
+
+    @include respond-to('small') {
+      --image: url('/assets/images/tuware_white.svg');
+    }
+}
+
+[my-theme="dark"] {
+    --font-color: #e1e1ff;
+    --bg-color: #000024;
+    --heading-color: #ffffff;
+    --nav: #000024;
+    --image: url('/assets/images/tuware_black.svg');
+    @each $c_name, $color in $colors {
+        @each $c_type, $c_value in $color {
+            .#{$c_name}.#{$c_type} {
+                color: color-change($color, $c_type);
+            }
+        }
+    }
+
+    @include respond-to('small') {
+      --image: url('/assets/images/tuware_black.svg');
+    }
+}
+
+div.logo {
+  width: 50px;
+
+  @include respond-to('large') {
+    width: 75px;
+    content: var(--image);
+    background-repeat: no-repeat;
+    display: block;
+  }
+
+  @include respond-to('small') {
+    content: var(--image);
+  }
+}
+
+header.scroll {
+  background-color: #434655;
+  color: #000;
+  box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+  transition: all .25s ease-out;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    max-width: 100%;
+    transition: .4s ease-in-out;
+}

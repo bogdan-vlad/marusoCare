@@ -1,0 +1,26 @@
+<svg id="Macbook__ipad__iphone" xmlns="http://www.w3.org/2000/svg" width="1222.526" height="683.316" viewBox="0 0 1222.526 683.316">
+  <g id="IPAD" transform="translate(928.44 82.892)">
+    <path id="bezel" d="M276.785,479.953H16.467c-9.048,0-16.384-8.142-16.384-18.185V18.268C.083,8.225,7.417.083,16.467.083H276.785c9.05,0,16.384,8.142,16.384,18.185v443.5C293.169,471.812,285.835,479.953,276.785,479.953Z" transform="translate(-0.083 -0.083)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="2" fill-rule="evenodd"/>
+    <path id="bezel-2" d="M276.785,479.953H16.467c-9.048,0-16.384-8.142-16.384-18.185V18.268C.083,8.225,7.417.083,16.467.083H276.785c9.05,0,16.384,8.142,16.384,18.185v443.5C293.169,471.812,285.835,479.953,276.785,479.953Z" transform="translate(-0.083 -0.083)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="2" fill-rule="evenodd"/>
+    <rect id="screen" width="248.195" height="382.963" stroke-width="1" fill="none" stroke="rgba(114, 179, 254, 1)" transform="translate(23.07 48.328)"/>
+    <ellipse id="lock" cx="10.938" cy="12.145" rx="10.938" ry="12.145" transform="translate(136.258 442.016)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="1"/>
+    <ellipse id="camera" cx="4.078" cy="4.527" rx="4.078" ry="4.527" transform="translate(141.713 21.073)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="1"/>
+  </g>
+  <g id="Laptop" transform="translate(1 1)">
+    <path id="bezel-2-2" data-name="bezel" d="M783.5,0h-676.4C88.688,0,73,16.768,73,37.537V531.521H817.589V37.537C817.589,16.766,801.957,0,783.5,0Z" transform="translate(26.551)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="2" fill-rule="evenodd"/>
+    <ellipse id="webcam" cx="5.455" cy="6.057" rx="5.455" ry="6.057" transform="translate(467.755 22.713)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="2"/>
+    <g id="bottom" transform="translate(0 531.478)">
+      <path id="Shape" d="M873.886,46.955H69.942C28.148,46.955,0,31.032,0,24.26V3.676A3.888,3.888,0,0,1,4.084,0H939.743a3.892,3.892,0,0,1,4.09,3.676V25.07C943.823,30.423,922.025,46.955,873.886,46.955Z" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="2" fill-rule="evenodd"/>
+      <path id="Line" d="M.5,14.5H941.114" transform="translate(0.182 7.456)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-linecap="square" stroke-width="1" fill-rule="evenodd"/>
+    </g>
+    <rect id="screen-2" data-name="screen" width="683.323" height="442.155" transform="translate(129.553 59.053)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="1"/>
+    <path id="touchpad" d="M475.557,352v4.674c0,3.333-5.909,4.34-10.382,4.34H281.657c-4.706,0-10.657-1.005-10.657-4.34V352" transform="translate(98.567 180.992)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="1" fill-rule="evenodd"/>
+  </g>
+  <g id="iphone" transform="translate(785.138 267.619)">
+    <path id="bezel-3" data-name="bezel" d="M177.283,390.563c0,13.375-9.806,24.215-21.9,24.215H21.905c-12.1,0-21.9-10.84-21.9-24.215V24.3C0,10.921,9.807.081,21.905.081H155.379c12.1,0,21.9,10.84,21.9,24.215V390.563Z" transform="translate(-0.001 -0.081)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="2" fill-rule="evenodd"/>
+    <rect id="screen-3" data-name="screen" width="152.641" height="301.45" transform="translate(12.272 54.388)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="1"/>
+    <path id="speaker" d="M85.024,27.662A1.575,1.575,0,0,1,83.688,29.4H56.274a1.575,1.575,0,0,1-1.336-1.737V23.756a1.575,1.575,0,0,1,1.336-1.737H83.688a1.576,1.576,0,0,1,1.336,1.737v3.907Z" transform="translate(19.981 11.199)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="1" fill-rule="evenodd"/>
+    <ellipse id="camera-2" data-name="camera" cx="4.091" cy="4.543" rx="4.091" ry="4.543" transform="translate(85.913 13.505)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="1"/>
+    <ellipse id="lock-2" data-name="lock" cx="13.692" cy="15.143" rx="13.692" ry="15.143" transform="translate(75.003 369.338)" fill="none" stroke="rgba(114, 179, 254, 1)" stroke-width="1"/>
+  </g>
+</svg>

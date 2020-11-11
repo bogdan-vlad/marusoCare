@@ -1,0 +1,4 @@
+User-agent: * 
+Disallow: /received
+Disallow: /404
+Sitemap: https://tuware.com/sitemap.xml

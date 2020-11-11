@@ -1,0 +1,29 @@
+//! css frameworks
+// @import "../node_modules/bulma/bulma"; // css framework https://bulma.io/ - uncomment if you'd like to use it
+
+//! utilities / helpers
+@import "./styles/utils/animations";
+@import "./styles/utils/mixins";
+@import "./styles/utils/variables";
+
+//! site-wide base styles
+@import "./styles/base/reset";
+/* normalize, clearfix, border-box, anti-aliasing, grey-scale */
+@import "./styles/base/global";
+@import "./styles/base/buttons";
+@import "./styles/base/typography";
+@import "./styles/base/images";
+@import "./styles/base/cookie";
+
+//! layout
+@import "./styles/layout/header";
+@import "./styles/layout/sections";
+@import "./styles/layout/glide";
+@import "./styles/layout/footer";
+@import "./styles/layout/darkmode";
+@import "./styles/layout/scroll";
+@import "./styles/layout/grid";
+@import "./styles/layout/modal";
+
+@import '../node_modules/@glidejs/glide/dist/css/glide.core.min.css';
+@import "./styles/utils/helpers";

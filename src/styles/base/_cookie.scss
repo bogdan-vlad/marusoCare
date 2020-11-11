@@ -1,0 +1,103 @@
+.cookie-btn {
+    color: white;
+    border: none;
+    background-color:#00c9b7;
+    border-radius: 4px;
+    padding: 0.3rem 1rem;
+    margin-left: 1rem;
+    transition: all 0.35s linear;
+    font-weight: normal;
+
+    &:hover {
+        background: darken($color-secondary, 5%) !important;
+        transform: translateY(-2px) !important;
+    }
+}
+
+#cookies-overlay {
+    z-index: 99999 !important;
+}
+// cookie transition in and out
+.cookies-message {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 70px;
+    width: 100%;
+    overflow: hidden;
+
+    p {
+        margin-bottom: 0;
+    }
+
+    @include respond-to('small') {
+        // max-height: 80px;
+        font-size: 20px;
+        bottom: 0;
+    }
+  
+    @include respond-to('large') {
+        bottom: 0;
+    }
+  
+    p {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 15px;
+        margin-top: 0%;
+        font-size: 15px;
+
+        .read-more {
+            color:#00c9b7;
+            font-weight: bold;
+        }
+
+        @include respond-to('small') {
+            font-size: 20px;
+        }
+    }
+}
+
+.cookies-logo {
+    width: 22px;
+}
+
+.fade-up {
+    animation: fade-up 1s both;
+    transform-origin: top;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes fade-up {
+    0% {
+        transform: translateY(50px);
+        opacity: (0);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: (1);
+    }
+}
+
+@for $i from 2 through 10 {
+    main .fade-up:nth-child(#{$i}n) {
+        animation-duration: #{$i * .25}s;
+    }
+}
+
+.fade-down {
+    animation: fade-down 1s both;
+    transform-origin: top;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes fade-down {
+    0% {
+        transform: translateY(0);
+        opacity: (0);
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: (1);
+    }
+}

@@ -1,0 +1,45 @@
+.btn {
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  background: transparent;
+
+  @include respond-to('small') {
+    margin-right: 20rem;
+    margin-top: 3rem;
+    font-size: 3rem;
+  }
+
+  @include respond-to('large') {
+    padding: 1rem 2rem;
+  }
+}
+
+.btn-default {
+  background: $color-secondary;
+  border: 2px solid transparent;
+  color: $white;
+  box-shadow: $box-shadow-primary;
+  max-width: 250px;
+  transition: all 0.35s linear;
+
+  &:hover {
+    background: darken($color-secondary, 5%);
+    transform: translateY(-2px);
+  }
+}
+.btn-explore {
+    border: 2px solid black;
+    color: #000;
+    box-shadow: 0 1px 3px rgba(56, 58, 57, 0.5);
+    transition: all .35s linear;
+}
+
+@include respond-to('small') {
+  .large-viewport {
+    display: none;
+  }
+}

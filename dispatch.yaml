@@ -1,0 +1,3 @@
+dispatch:
+  - url: tuware.com/*
+    service: website-2020

@@ -1,0 +1,40 @@
+$font-heading: Source Sans Pro, Helvetica, sans-serif;
+$font-body: Source Sans Pro, Helvetica, sans-serif;
+
+
+html {
+  @include responsive-font(0.9vw, 10px, 22px, 10px);
+}
+
+body {
+  font-family: $font-body;
+  color: $color-typography;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 500;
+  line-height: 1;
+
+  small {
+    font-weight: 600;
+    font-size: 70%;
+
+    @include respond-to('small') {
+      font-size: 100%;
+    }
+  }
+}
+
+h1 {
+  font-size: 3.75rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}

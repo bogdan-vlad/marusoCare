@@ -1,0 +1,182 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8rem
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+
+  @include respond-to('large') {
+    &.flex-end {
+      justify-content: flex-end;
+
+      p {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.m-right-1x {
+  margin-right: 1rem;
+}
+
+.m-top-1x {
+  margin-top: 1rem;
+}
+
+.m-top-2x {
+  margin-top: 2rem;
+}
+
+.m-top-4x {
+  // margin-top: 4rem;
+
+  @include respond-to('small') {
+    margin-top: 4rem;
+  }
+}
+
+.m-bottom-1x {
+  margin-bottom: 1rem;
+}
+
+.m-bottom-2x {
+  margin-bottom: 2rem;
+}
+
+.m-bottom-4x {
+  margin-bottom: 4rem;
+}
+
+.max-w-75 {
+  max-width: none;
+
+  @include respond-to('large') {
+    max-width: 100%;
+  }
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.show-on-lg {
+  display: none;
+
+  @include respond-to('large') {
+    display: block;
+  }
+}
+
+.svg-icon {
+  display: inline;
+  vertical-align: middle;
+
+  &.svg-icon--sm {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &.svg-icon--md {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.txt-a-right {
+  text-align: right;
+}
+
+.txt-a-right--lg {
+  @include respond-to('large') {
+    text-align: right;
+  }
+}
+
+.txt-c-trans-6 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.txt-c-trans-8 {
+  color: hsla(0, 100%, 100%, 0.8);
+}
+
+.txt-sm {
+  font-size: 0.8rem;
+}
+
+.txt-lg {
+  font-size: 1.5rem;
+
+  @include respond-to('small') {
+    font-size: 2rem;
+  }
+}
+
+.txt-xl {
+  font-size: 13px;
+
+  @include respond-to('small') {
+    font-size: 2.4rem;
+  }
+}
+
+.txt-4 {
+  font-size: 4rem
+}
+
+.txt-w-600 {
+  font-weight: 600;
+}
+
+.w-50 {
+  @include respond-to('large') {
+    width: 50%;
+  }
+
+  @include respond-to('small') {
+    width: 100%;
+  }
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.m-top-minus-10 {
+  margin-top: -10rem;
+
+  @include respond-to('small') {
+    margin-top: 4rem;
+  }
+}
+
+.no-style {
+  background: none !important;
+}
+.no-padding {
+  padding: 0;
+}
+.no-margin {
+  margin: 0;
+}
+.f-size-14x {
+  font-size: 14px;
+}
+.f-weight {
+  font-weight: normal
+}
+
+.c-white {
+  color: $white;
+}
+.l-height-15 {
+  line-height: 15px;
+}

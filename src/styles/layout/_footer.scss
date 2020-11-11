@@ -1,0 +1,27 @@
+footer {
+  padding: 4rem 2rem calc(50px + 4rem);
+  background: $dark-grey;
+  color: $white;
+
+  @include respond-to('large') {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 8rem;
+    grid-row-gap: 2rem;
+    justify-items: stretch;
+    padding: 2rem 4rem;
+  }
+
+  @include respond-to('small') {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 2rem;
+    justify-items: stretch;
+    width: 100%;
+  }
+  .address_line {
+    margin: 0.5rem 0;
+  }
+}

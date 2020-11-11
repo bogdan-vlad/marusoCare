@@ -1,0 +1,59 @@
+.section-stagger,
+.section-fade {
+  opacity: 0;
+}
+
+.section-stagger {
+  display: inline-block;
+  color: #000000;
+}
+
+.h-scroll {
+  animation: h-scroll 30s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+@keyframes h-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: (0);
+  }
+  100% {
+    opacity: (1);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.75s both;
+  transform-origin: top;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes fade-in-up {
+  0% {
+    transform: translateY(30%);
+    opacity: (0);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: (1);
+  }
+}

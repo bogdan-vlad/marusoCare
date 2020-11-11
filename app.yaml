@@ -1,0 +1,15 @@
+runtime: python38
+service: website-2020
+
+# Handlers define how to route requests to your application.
+handlers:
+
+- url: /
+  static_files: dist/index.html
+  upload: dist/index.html
+  secure: always
+
+- url: /(.*)
+  static_files: dist/\1
+  upload: dist/(.*)
+  secure: always

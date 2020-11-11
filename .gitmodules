@@ -1,0 +1,6 @@
+[submodule "gae_framework"]
+	path = gae_framework
+	url = git@github.com:tuwarerepo/gae_framework.git
+[submodule "dist"]
+	path = dist
+	url = git@github.com:tuwarerepo/tuwarerepo.github.io.git

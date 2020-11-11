@@ -1,0 +1,23 @@
+img.hero-img {
+  // position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 0;
+  z-index: 99999;
+
+  @include respond-to('medium') {
+    max-width: 75%;
+    left: auto;
+    right: 1rem;
+  }
+
+  @include respond-to('large') {
+    top: 13rem;
+    left: auto;
+    right: 4rem;
+    bottom: 1rem;
+    max-width: 50%;
+    z-index: -1;
+    margin: 2.5rem;
+  }
+}
