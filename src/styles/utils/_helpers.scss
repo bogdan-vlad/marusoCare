@@ -132,6 +132,10 @@
   font-weight: 600;
 }
 
+.txt-18px {
+  font-size: 18px;
+}
+
 .w-50 {
   @include respond-to('large') {
     width: 50%;
@@ -140,6 +144,9 @@
   @include respond-to('small') {
     width: 100%;
   }
+}
+.w-03 {
+  width: 3%;
 }
 
 .w-75 {
@@ -179,4 +186,7 @@
 }
 .l-height-15 {
   line-height: 15px;
+}
+.opacity-05 {
+  opacity: 0.5;
 }

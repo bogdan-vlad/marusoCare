@@ -52,7 +52,8 @@ section {
   }
 
   &.section--approach,
-  &.section--contact {
+  &.section--contact,
+  &.section--register {
     @include respond-to('large') {
       background-repeat: no-repeat;
       background-position: left;
@@ -65,7 +66,7 @@ section {
   }
 
   @include respond-to('medium') {
-    padding: calc(75px + 4rem) 4rem;
+    padding: calc(75px + 4rem) 12rem;
   }
 
   display: flex;
@@ -128,6 +129,18 @@ section {
     height: 100px;
 }
 
+.column-wrapper {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 100%;
+}
+
+.left-column:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .row {
   height: 67%;
   width: 100%;
@@ -251,4 +264,37 @@ h4.section-sub-title {
   @include respond-to('large') {
     height: 100%;
   }
+}
+
+.text-overlay {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.overlayed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1d4d6f !important;
+  font-size: x-large;
+  font-weight: bold;
+}
+.form-wrapper {
+  padding: calc(75px + 4rem) 12rem;
+}
+
+#radio label {
+	float: right;
+  display: inline
+}
+radio {
+    display: inline;
+}
+#radio input {
+	width: auto;
+	margin-left: 3em;
+}
+.radio-buttons {
+  display: flex;
 }

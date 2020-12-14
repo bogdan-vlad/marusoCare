@@ -4,3 +4,6 @@
  Referrer-Policy: no-referrer
  X-Content-Type-Options: nosniff
  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+ Access-Control-Allow-Origin: *
+ Access-Control-Allow-Headers': Content-Type
+ Access-Control-Allow-Methods': GET, POST, PUT, DELETE, OPTIONS

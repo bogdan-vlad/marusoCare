@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> partials/head}}
+<body>
+{{> partials/nav}}
+    <form action="received_register.html"
+          class="form-wrapper"
+          id="register-form"
+          method="POST"
+          name="register">
+        <h4>Register with us</h4>
+            <p>Your details</p>
+                <div class="radio-buttons">
+                    <label>
+                        <input class="w-03" type="radio" name="title" value="Mr"/><span>Mr</span>
+                    </label>
+                    <label>
+                        <input class="w-03" type="radio" name="title" value="Ms" checked="checked"/><span>Ms</span>
+                    </label>
+                    {{!-- <input class="w-03" type="radio" name="title" value="Miss"/><label>Miss</label>
+                    <input class="w-03" type="radio" name="title" value="Mrs"/><label>Mrs</label>
+                    <input class="w-03" type="radio" name="title" value="Dr"/><label>Dr</label>
+                    <input class="w-03" type="radio" name="title" value="Sir"/><label>Sir</label> --}}
+                </div>
+                <div class="column-wrapper">
+                    <div class="left-column">
+                        <label for="first_name">First Name*</label>
+                        <input name="first_name" id="first_name" type="text" required>
+                    </div>
+                    <div class="left-column">
+                        <label for="last_name">Last Name*</label>
+                        <input name="last_name" id="last_name" type="text" class="validate" required>
+                    </div>
+                    <div class="left-column">
+                        <label for="telephone">Telephone number</label>
+                        <input name="telephone" id="telephone" type="number" class="validate">
+                    </div>
+                    <div class="left-column">
+                        <label for="email">Email*</label>
+                        <input name="email" id="email" type="email" class="validate" required>
+                    </div>
+                </div>
+                <div class="column-wrapper">
+                    {{!-- <div class="left-column">
+                        <label for="nationality">Nationality</label>
+                        <input name="nationality" id="nationality" type="text" class="validate">
+                    </div> --}}
+                    <div class="left-column">
+                        <label for="nino">National Insurance Number</label>
+                        <input name="nino" id="nino" type="text" class="validate">
+
+                        <label for="address">Address</label>
+                        <input name="address" id="address" type="text" class="validate">
+
+                        <label for="postcode">Postcode</label>
+                        <input name="postcode" id="postcode" type="text" class="validate">
+
+                        <label for="dob">Date of Birth</label>
+                        <input name="dob" id="dob" type="date" class="validate">
+                    </div>
+                </div>
+                <p>Are there any restrictions to your residence withing the UK
+                    that might your right to take up employment in the UK?<br>
+                    <div class="radio-buttons">
+                    <input
+                        class="w-03"
+                        name="tpe"
+                        type="radio" value="yes" />
+                        <label>Yes</label>
+                    <input
+                        class="w-03"
+                        name="tpe"
+                        type="radio"
+                        value="no" checked />
+                        <label>No</label>
+                    </div>
+                </p>
+                <p>If your application is successful, would you require permission 
+                    to work in the UK?<br>
+                    <div class="radio-buttons">
+                    <input
+                        class="w-03"
+                        name="perm_uk"
+                        type="radio"
+                        value="yes" />
+                    <label>Yes</label>
+                    <input
+                        class="w-03"
+                        name="perm_uk"
+                        type="radio"
+                        value="no" checked />
+                        <label>No</label>
+                    </div>
+                </p>
+                <p>NMC/GMC/GDC pin (if applicable)</p>
+                <div class="column-wrapper">
+                    <div class="left-column">
+                        <label for="nmc">NMC number</label>
+                        <input id="nmc" type="text" name="nmc">
+                    </div>
+                </div>
+                <div class="column-wrapper">
+                    <div class="left-column">
+                        <label>Expiry Date</label>
+                    <input
+                        id="nmc_expiry"
+                        name="nmc_expiry"
+                        type="date"
+                        class="validate w-50">
+                    </div>
+                </div>
+                <p>Criminal Records</p>
+                <p class="text-secondary">Do you have any unspent* Criminal convictions?<br>
+                <div class="radio-buttons">
+                    <input
+                        class="w-03"
+                        value="yes"
+                        id='convicted_yes'
+                        name="group1"
+                        type="radio"/>
+                    <label>Yes</label>
+                    <input
+                        class="w-03"
+                        value="no"
+                        id='convicted_no'
+                        name="group1"
+                        type="radio"
+                        checked/>
+                    <label>No</label>
+                </div>
+                <div id="criminal" style="display: none">
+                    <label>Please provide</label>
+                        <input
+                            id="conviction"
+                            type="text"
+                            class="validate"
+                            name="group1_provide">
+                </div>
+                <p>
+                    Are you / have been under / or undergoing any clinical
+                    investigation, disciplinary or suspension process
+                    pending or otherwise?<br>
+                    <div class="radio-buttons">
+                        <input
+                            class="w-03"
+                            name="group2"
+                            value="yes"
+                            type="radio"
+                            id="suspension_yes" />
+                        <label>Yes</label>
+                        <input
+                            class="w-03"
+                            value="no"
+                            id="suspension_no"
+                            name="group2"
+                            type="radio"
+                            checked/>
+                        <label>No</label>
+                    </div>
+                </p>
+                <div id="investigation" style="display: none;">
+                    <label>Please Provide</label>
+                        <input
+                            id="suspension"
+                            type="text"
+                            class="validate"
+                            name="group2_provide">
+                </div>
+                    <p>
+                        Do you have any health issues or a disability relevant
+                        which may make it difficult for you to carry out functions
+                        which are essential for the role you seek?<br>
+                        <div class="radio-buttons">
+                            <input
+                                id="health_yes"
+                                class="w-03"
+                                name="group3"
+                                type="radio" />
+                                <label>Yes</label>
+                            <input
+                                class="w-03"
+                                value="no"
+                                id="health_no"
+                                name="group3"
+                                type="radio"
+                                checked/>
+                                <label>No</label>
+                        </div>
+                    </p>
+                    <div id="health" style="display: none;">
+                        <label>Please Provide</label>
+                            <input
+                                id="health_issue"
+                                type="text"
+                                class="validate"
+                                name="group3_provide">
+                    </div>
+                    <p>
+                        Please tick the appropriate box to confirm that you have read
+                        and understood the above information.<br>
+                        <div class="radio-buttons">
+                            <input
+                                value="I DO NOT wish to work more than 48 hrs per week"
+                                class="w-03"
+                                name="group4"
+                                type="radio" checked/>
+                                <label>I DO NOT wish to work more than 48 hrs per week</label>
+
+
+                            <input
+                                value="I DO wish to work more than 48 hrs per week"
+                                class="w-03"
+                                name="group4"
+                                type="radio"  />
+                                <label>I DO wish to work more than 48 hrs per week</label>
+                        </div>
+                    </p>
+            <button class="btn btn-default" type="submit">Submit</button>
+    </form>
+</body>
+</html>

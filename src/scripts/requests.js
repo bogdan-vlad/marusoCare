@@ -126,6 +126,8 @@ export class RequestEngine {
 
 export const requests = new RequestEngine({
     send_email(params, options) {
+        console.log(params)
+        console.log(options)
         return this.post(
             'https://api.sendinblue.com/v3/smtp/email',
             params,

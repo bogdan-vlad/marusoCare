@@ -135,19 +135,22 @@ document.addEventListener('DOMContentLoaded', () => {
 }, false);
 
 var accept_cookie_button = document.getElementById('accept_cookie_button');
+var cookieEnabled = navigator.cookieEnabled;
 
-accept_cookie_button.onclick = () => {
+if (!cookieEnabled) {
+    accept_cookie_button.onclick = () => {
     
-    setCookie('cookie_accepted', 'true');
-
-    var hide = document.getElementById('cookies-overlay');
-
-    if (hide) {
-        hide.classList.remove('fade-up');
-        hide.classList.add('fade-down')
-        document.getElementById('cookies-overlay').style.display = 'none';
-    }
-};
+        setCookie('cookie_accepted', 'true');
+    
+        var hide = document.getElementById('cookies-overlay');
+    
+        if (hide) {
+            hide.classList.remove('fade-up');
+            hide.classList.add('fade-down')
+            document.getElementById('cookies-overlay').style.display = 'none';
+        }
+    };
+}
 
 function getCookie(cname) {
     let name = cname + '=';
@@ -171,30 +174,50 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + '=' + cvalue + ';' + expires + ';path/';
 }
 
-function handleMouseover(e) {
-    document.querySelector(".active").classList.remove("active");
-    e.target.closest(".card").classList.add("active");
+const form = document.getElementById('contact-form');
+var contact_page = window.location.pathname;
+
+const register_form = document.getElementById('register-form');
+
+
+if (contact_page != "/register.html") {
+    form.addEventListener('submit', (event) => {
+        send_email();
+    
+        event.preventDefault();
+    
+        // setTimeout(() => {
+        //     let hostname = window.location
+    
+        //     if (hostname === 'localhost') {
+        //         window.location.replace('http://localhost:8180/received.html');
+        //     } else {
+        //         window.location.replace(`${origin}/received.html`);
+        //     }
+        // },500);
+    });
+} else {
+    register_form.addEventListener('submit', (event) => {
+        register();
+        event.preventDefault();
+    });
 }
 
-document.querySelectorAll(".card").forEach(card => card.addEventListener("mouseover", handleMouseover) );
+function register() {
+    var register_form = document.getElementById('register-form');
 
-
-const form = document.getElementById('contact-form');
-form.addEventListener('submit', (event) => {
-    send_email();
-
-    event.preventDefault();
-
-    setTimeout(() => {
-        let hostname = window.location
-
-        if (hostname === 'localhost') {
-            window.location.replace('http://localhost:8180/received.html');
-        } else {
-            window.location.replace(`${origin}/received.html`);
-        }
-    },500);
-});
+    console.log(register_form.elements[0].value);
+    console.log(register_form.elements[1].value);
+    console.log(register_form.elements[2].value);
+    console.log(register_form.elements[3].value);
+    console.log(register_form.elements[4].value);
+    console.log(register_form.elements[5].value);
+    console.log(register_form.elements[6].value);
+    console.log(register_form.elements[7].value);
+    console.log(register_form.elements[8].value);
+    console.log(register_form.elements[9].value);
+    
+}
 
 function send_email() {
     const form = document.getElementById('contact-form');
@@ -205,18 +228,18 @@ function send_email() {
     let comment = form.elements[3].value;
 
     const url = 'https://api.sendinblue.com/v3/smtp/email';
-    let api_key = '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';
+    let api_key = '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';
 
     requests.send_email(
         {
             url: url,
             'sender':{
                'name':'Contact form',
-               'email':'noreply@tuware.com'
+               'email':'noreply@marusocare.com'
             },
             'to':[
                {
-                  'email':'hello@tuware.com'
+                  'email':'bogdan.vlad.v@gmail.com'
                }
             ],
             'htmlContent': (
@@ -227,38 +250,86 @@ function send_email() {
                 `<h5>Telephone: ${phone}</h5>` +
                 `<h5>Comment: ${comment}</h5>`
             ),
-            'subject':'New Submission',
+            'subject':'New Contact',
             'replyTo':{
-               'email':'noreply@tuware.com'
-            }
+               'email':'noreply@marusocare.com'
+            },
         },
         {
             headers: {
+                Accept: 'application/json',
                 'api-key': api_key,
             },
         }
     );
 }
 
-$('.g-recaptcha').attr("data-sitekey", function(){
-    if(window.location.hostname === 'localhost') {
-        return "6Ld_PbsZAAAAAAVXdVCVYH0DtjnrTpb5uGeMM3Ss";
-    } else if (window.location.hostname === 'tuware.com') {
-        return "6LdrQL4ZAAAAAB_De68eFv_WYXCBZ1CXWNbLBTIj";
-    } else if (window.location.hostname === 'https://tuware-website.nw.r.appspot.com/') {
-        return "6LdgZL0ZAAAAAFigyThLoxtZ8LpfLbQ26JNdNsxc";
+var conviction = document.getElementById('convicted_yes');
+var not_convicted = document.getElementById('convicted_no');
+var criminal = document.getElementById("criminal");
+
+conviction.onclick = () => {
+    if (conviction.id == 'convicted_yes') {
+        criminal.style.display = "block";
     }
- });
+}
+not_convicted.onclick = () => {
+    if (not_convicted.id == 'convicted_no') {
+        criminal.style.display = "none";
+    }
+}
+
+var suspension_yes = document.getElementById('suspension_yes');
+var suspension_no = document.getElementById('suspension_no');
+var investigation = document.getElementById('investigation');
+
+suspension_yes.onclick = () => {
+    if (suspension_yes.id == 'suspension_yes') {
+        investigation.style.display = "block";
+    }
+}
+suspension_no.onclick = () => {
+    if (suspension_no.id == 'suspension_no') {
+        investigation.style.display = "none";
+    }
+}
+
+var health_yes = document.getElementById('health_yes');
+var health_no = document.getElementById('health_no');
+var health = document.getElementById('health');
+
+health_yes.onclick = () => {
+    if (health_yes.id == 'health_yes') {
+        health.style.display = "block";
+    }
+}
+
+health_no.onclick = () => {
+    if (health_no.id == 'health_no') {
+        health.style.display = "none";
+    }
+}
+
+
+// $('.g-recaptcha').attr("data-sitekey", function(){
+//     if(window.location.hostname === 'localhost') {
+//         return "6Ld_PbsZAAAAAAVXdVCVYH0DtjnrTpb5uGeMM3Ss";
+//     } else if (window.location.hostname === 'tuware.com') {
+//         return "6LdrQL4ZAAAAAB_De68eFv_WYXCBZ1CXWNbLBTIj";
+//     } else if (window.location.hostname === 'https://tuware-website.nw.r.appspot.com/') {
+//         return "6LdgZL0ZAAAAAFigyThLoxtZ8LpfLbQ26JNdNsxc";
+//     }
+//  });
 
  // Close the modal by clicking anywhere outside of the modal content box
 
-$(document).click(function(event) {
-    if ($(event.target).closest(".modal,.open-modal").length) {
-        $("body").find(".modal:target").hide();
-    }
-    else {
-        $(".open-modal").click(function() {
-            $(".modal").addClass("visible");
-        });
-    }
-});
+// $(document).click(function(event) {
+//     if ($(event.target).closest(".modal,.open-modal").length) {
+//         $("body").find(".modal:target").hide();
+//     }
+//     else {
+//         $(".open-modal").click(function() {
+//             $(".modal").addClass("visible");
+//         });
+//     }
+// });

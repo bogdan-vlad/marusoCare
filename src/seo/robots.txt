@@ -1,4 +1,7 @@
 User-agent: * 
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers': Content-Type
+Access-Control-Allow-Methods': GET, POST, PUT, DELETE, OPTIONS
 Disallow: /received
 Disallow: /404
 Sitemap: https://tuware.com/sitemap.xml

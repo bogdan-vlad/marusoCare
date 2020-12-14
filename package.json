@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "lazysizes": "^4.1.5",
+    "materialize-css": "^1.0.0-rc.2",
     "npm": "^6.14.7"
   }
 }

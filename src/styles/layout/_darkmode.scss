@@ -109,7 +109,7 @@ $colors: (
     --bg-color: #fff;
     --nav: #fff;
     --heading-color: #292922;
-    --image: url('/assets/images/tuware_white.svg');
+    --image: url('/assets/images/maruso.gif');
     @each $c_name, $color in $colors {
         .#{$c_name} {
             color: color-change($color, 'base');
@@ -117,7 +117,7 @@ $colors: (
     }
 
     @include respond-to('small') {
-      --image: url('/assets/images/tuware_white.svg');
+      --image: url('/assets/images/maruso.gif');
     }
 }
 
@@ -126,7 +126,7 @@ $colors: (
     --bg-color: #000024;
     --heading-color: #ffffff;
     --nav: #000024;
-    --image: url('/assets/images/tuware_black.svg');
+    --image: url('/assets/images/maruso.gif');
     @each $c_name, $color in $colors {
         @each $c_type, $c_value in $color {
             .#{$c_name}.#{$c_type} {

@@ -120,6 +120,18 @@ module.exports = {
       template: 'src/templates/privacy.hbs',
       inject: 'head'
     }),
+    new HtmlWebpackPlugin({
+      title: 'Register',
+      filename: 'register.html',
+      template: 'src/templates/register.hbs',
+      inject: 'head'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Register Received',
+      filename: 'register_received.html',
+      template: 'src/templates/register_received.hbs',
+      inject: 'head'
+    }),
     new PreloadWebpackPlugin({
       rel: 'preload',
       as(entry) {
